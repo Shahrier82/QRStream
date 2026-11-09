@@ -1,0 +1,12 @@
+*.iml
+.gradle/
+/local.properties
+/.idea/
+.DS_Store
+/build/
+/app/build/
+/captures/
+.externalNativeBuild/
+.cxx/
+# Your real Firebase config must never be committed to a public repo:
+# /app/google-services.json
