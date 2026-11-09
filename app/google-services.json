@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "92321998578",
+    "project_id": "qrstream",
+    "storage_bucket": "qrstream.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:92321998578:android:ebee3acedb85c7fde6926b",
+        "android_client_info": {
+          "package_name": "com.example.qrstream"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDB4dMMu6vYnsjWqr3teb3s0GOYwFQWtcM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

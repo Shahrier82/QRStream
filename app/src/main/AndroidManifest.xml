@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Receive screen: scan QR frames with the camera. -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- TransferService runs as a foreground service while sending/receiving. -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <!-- Required on Android 14 (API 34) for foregroundServiceType="dataSync". -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+
+    <!-- Android 13+ runtime permission for showing the progress notification. -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!-- Only used by Firebase Auth/Firestore and WorkManager's network constraint. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- Camera is needed only to receive; allow install on devices without one. -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+
+    <application
+        android:name=".QRStreamApp"
+        android:allowBackup="false"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.QRStream"
+        tools:targetApi="34">
+
+        <!-- ===================== Activities ===================== -->
+
+        <activity
+            android:name=".ui.LoginActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.HomeActivity"
+            android:exported="false" />
+
+        <!-- Orientation changes recreate the Activity; session state lives in the
+             bound TransferService, so nothing is lost. -->
+        <activity
+            android:name=".ui.SendActivity"
+            android:exported="false"
+            android:label="@string/title_send"
+            android:launchMode="singleTop"
+            android:parentActivityName=".ui.HomeActivity" />
+
+        <activity
+            android:name=".ui.ReceiveActivity"
+            android:exported="false"
+            android:label="@string/title_receive"
+            android:launchMode="singleTop"
+            android:parentActivityName=".ui.HomeActivity" />
+
+        <activity
+            android:name=".ui.HistoryActivity"
+            android:exported="false"
+            android:label="@string/title_history"
+            android:parentActivityName=".ui.HomeActivity" />
+
+        <activity
+            android:name=".ui.DetailsActivity"
+            android:exported="false"
+            android:label="@string/title_details"
+            android:parentActivityName=".ui.HistoryActivity" />
+
+        <activity
+            android:name=".ui.BenchmarkActivity"
+            android:exported="false"
+            android:label="@string/title_benchmark"
+            android:parentActivityName=".ui.HomeActivity" />
+
+        <!-- ===================== Service ===================== -->
+
+        <!-- Foreground service owning the sender loop and the Reassembler.
+             Not exported: only this app may bind to or start it. -->
+        <service
+            android:name=".service.TransferService"
+            android:exported="false"
+            android:foregroundServiceType="dataSync" />
+
+        <!-- ===================== Content providers ===================== -->
+
+        <!-- Local transfer history (SQLite behind a ContentProvider).
+             Not exported: all access goes through this app's ContentResolver. -->
+        <provider
+            android:name=".provider.TransferProvider"
+            android:authorities="com.example.qrstream.provider"
+            android:exported="false" />
+
+        <!-- Lets other apps open/share received files via temporary URI grants. -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.qrstream.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <!-- ===================== Broadcast receivers =====================
+             TransferStatusReceiver is registered dynamically by the Activities and
+             BatteryLowReceiver by TransferService, so there are intentionally no
+             <receiver> entries here. -->
+
+    </application>
+
+</manifest>
