@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- FileProvider roots. Only the "received" folder of the app's private files directory
+     can ever be shared with other apps. -->
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <files-path
+        name="received"
+        path="received/" />
+</paths>

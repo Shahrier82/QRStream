@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand palette (light theme). values-night/colors.xml overrides these for dark mode. -->
+    <color name="primary">#00695C</color>
+    <color name="on_primary">#FFFFFF</color>
+    <color name="primary_container">#B2DFDB</color>
+    <color name="on_primary_container">#00201C</color>
+    <color name="secondary">#455A64</color>
+    <color name="on_secondary">#FFFFFF</color>
+    <color name="error_text">#B3261E</color>
+
+    <!-- Chunk grid on the Receive screen. -->
+    <color name="cell_missing">#B0B7BC</color>
+    <color name="cell_received">#2E7D32</color>
+    <color name="cell_recovered">#1565C0</color>
+
+    <!-- Status chips in the history list. -->
+    <color name="status_completed">#2E7D32</color>
+    <color name="status_failed">#C62828</color>
+    <color name="status_interrupted">#EF6C00</color>
+    <color name="on_status">#FFFFFF</color>
+
+    <!-- The QR code is always drawn on white so its quiet zone stays light. -->
+    <color name="qr_background">#FFFFFF</color>
+    <color name="icon_gray">#9AA3A8</color>
+</resources>

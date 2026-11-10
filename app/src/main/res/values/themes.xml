@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- DayNight follows the system light/dark setting. Colors come from colors.xml, which
+         has a values-night variant, so both themes are covered. -->
+    <style name="Theme.QRStream" parent="Theme.Material3.DayNight">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/on_primary</item>
+        <item name="colorPrimaryContainer">@color/primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/on_primary_container</item>
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorOnSecondary">@color/on_secondary</item>
+    </style>
+
+    <style name="TextAppearance.QRStream.Label" parent="TextAppearance.Material3.LabelLarge" />
+
+    <style name="Widget.QRStream.BigButton" parent="Widget.Material3.Button">
+        <item name="android:minHeight">96dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="iconSize">36dp</item>
+        <item name="iconGravity">textStart</item>
+        <item name="iconPadding">16dp</item>
+    </style>
+
+    <style name="Widget.QRStream.StatusChip" parent="">
+        <item name="android:background">@drawable/bg_status_chip</item>
+        <item name="android:textColor">@color/on_status</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:paddingTop">3dp</item>
+        <item name="android:paddingBottom">3dp</item>
+    </style>
+</resources>

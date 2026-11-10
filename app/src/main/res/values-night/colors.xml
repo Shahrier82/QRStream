@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark theme overrides. Names must match values/colors.xml. -->
+    <color name="primary">#4DB6AC</color>
+    <color name="on_primary">#00201C</color>
+    <color name="primary_container">#004D43</color>
+    <color name="on_primary_container">#B2DFDB</color>
+    <color name="secondary">#B0BEC5</color>
+    <color name="on_secondary">#1C2A30</color>
+    <color name="error_text">#F2B8B5</color>
+
+    <color name="cell_missing">#4A5258</color>
+    <color name="cell_received">#66BB6A</color>
+    <color name="cell_recovered">#64B5F6</color>
+
+    <color name="status_completed">#388E3C</color>
+    <color name="status_failed">#D32F2F</color>
+    <color name="status_interrupted">#F57C00</color>
+    <color name="on_status">#FFFFFF</color>
+
+    <color name="qr_background">#FFFFFF</color>
+    <color name="icon_gray">#9AA3A8</color>
+</resources>

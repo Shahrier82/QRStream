@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">QR Stream</string>
+
+    <!-- Screen titles -->
+    <string name="title_send">Send file</string>
+    <string name="title_receive">Receive file</string>
+    <string name="title_history">History</string>
+    <string name="title_details">Transfer details</string>
+    <string name="title_benchmark">Benchmark</string>
+
+    <!-- Common actions -->
+    <string name="action_cancel">Cancel</string>
+    <string name="action_done">Done</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_start">Start</string>
+    <string name="action_pause">Pause</string>
+    <string name="action_resume">Resume</string>
+    <string name="action_stop">Stop</string>
+    <string name="action_share">Share</string>
+    <string name="action_copy">Copy table</string>
+    <string name="action_sign_in">Sign in</string>
+    <string name="action_sign_out">Sign out</string>
+    <string name="action_login">Log in</string>
+    <string name="action_register">Create account</string>
+    <string name="action_continue_offline">Continue offline</string>
+    <string name="action_pick_file">Choose file</string>
+    <string name="action_allow_camera">Allow camera</string>
+    <string name="action_open_settings">Open app settings</string>
+    <string name="action_view_details">View details</string>
+    <string name="action_open_file">Open file</string>
+    <string name="action_reverify">Re-verify hash</string>
+    <string name="action_run_benchmark">Run benchmark</string>
+
+    <!-- Login -->
+    <string name="login_subtitle">Send small files between two phones using only the screen and the camera.</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="login_offline_hint">An account is optional. Transfers work without internet and without an account.</string>
+    <string name="error_email_invalid">Enter a valid email address.</string>
+    <string name="error_password_short">The password needs at least %1$d characters.</string>
+    <string name="error_no_network">No internet connection. You can still continue offline.</string>
+    <string name="error_bad_credentials">Wrong email or password.</string>
+    <string name="error_account_exists">An account with this email already exists. Try logging in.</string>
+    <string name="error_weak_password">That password is too weak. Use at least 6 characters.</string>
+    <string name="error_auth_generic">Sign-in failed: %1$s</string>
+    <string name="error_firebase_not_configured">Firebase is not set up in this build (see the README). You can continue offline.</string>
+
+    <!-- Home -->
+    <string name="home_send">Send</string>
+    <string name="home_receive">Receive</string>
+    <string name="home_history">History</string>
+    <string name="home_settings">Demo settings</string>
+    <string name="home_simulate_loss">Simulate frame loss</string>
+    <string name="home_simulate_loss_hint">When on, the Send screen drops some QR frames on purpose so you can demonstrate parity recovery with a single pair of phones.</string>
+    <string name="home_signed_in">Signed in as %1$s</string>
+    <string name="home_offline">Offline mode (no account)</string>
+    <string name="home_transfer_running">Transfer in progress: %1$s (%2$s)</string>
+
+    <!-- Send -->
+    <string name="file_none">No file chosen</string>
+    <string name="file_loading">Reading file...</string>
+    <string name="file_info">%1$s, %2$d frames per pass, about %3$s per pass</string>
+    <string name="label_chunk_size">Chunk size</string>
+    <string name="label_group_size">Parity group size (K)</string>
+    <string name="label_strong_ec">Stronger QR error correction (level M)</string>
+    <string name="label_simulate_loss">Simulate frame loss</string>
+    <string name="label_loss_percent">Frames to drop</string>
+    <string name="label_fps">Frames per second</string>
+    <string name="bytes_value">%1$d bytes</string>
+    <string name="fps_value">%1$d fps</string>
+    <string name="percent_value">%1$d%%</string>
+    <string name="group_none">No parity</string>
+    <string name="group_value">K = %1$d (1 parity frame per %1$d data frames)</string>
+    <string name="frame_counter">Frame %1$d / %2$d  -  pass %3$d</string>
+    <string name="frame_counter_dropped">%1$d frames dropped by the loss simulation</string>
+    <string name="send_idle_hint">Choose a file and press Start. Point the other phone at this screen.</string>
+    <string name="send_finished">Sending stopped.</string>
+    <string name="cd_qr_idle">QR code area. Nothing is being sent.</string>
+    <string name="cd_qr_running">QR code, frame %1$d of %2$d</string>
+    <string name="error_pick_first">Choose a file first.</string>
+    <string name="error_busy">Another transfer is already running.</string>
+    <string name="error_file_too_large">This file is too large. The limit is %1$s: every QR code carries at most about 800 bytes and is shown for a fraction of a second, so bigger files would take many minutes and are very likely to fail.</string>
+    <string name="error_file_read">The file could not be read. Choose another file.</string>
+    <string name="error_send_failed">Sending failed: %1$s</string>
+
+    <!-- Receive -->
+    <string name="receive_waiting">Point the camera at the sender\'s QR code.</string>
+    <string name="receive_progress">%1$s: %2$s (%3$d / %4$d chunks)</string>
+    <string name="receive_live_stats">Decoded: %1$d fps  -  duplicates ignored: %2$d  -  recovered by parity: %3$d  -  rejected: %4$d</string>
+    <string name="receive_done">Received and verified: %1$s</string>
+    <string name="receive_interrupted">Receiving was stopped before the file was complete.</string>
+    <string name="legend_missing">Missing</string>
+    <string name="legend_received">Received</string>
+    <string name="legend_recovered">Recovered</string>
+    <string name="cd_camera_preview">Camera preview</string>
+    <string name="cd_chunk_grid">Chunk grid: %1$d of %2$d chunks available</string>
+    <string name="permission_camera_rationale">The camera is needed to scan the sender\'s QR codes. Nothing is recorded or uploaded.</string>
+    <string name="permission_camera_denied">Camera access was denied, so this phone cannot receive files. Allow the camera in the app settings to continue. Sending does not need the camera.</string>
+    <string name="error_camera">The camera could not be started.</string>
+
+    <!-- Statistics panel -->
+    <string name="stats_title">Transfer statistics</string>
+    <string name="stats_sent_frames">Frames sent: %1$d (one full pass = %2$d frames)</string>
+    <string name="stats_passes">Full passes: %1$d</string>
+    <string name="stats_dropped_sim">Dropped by loss simulation: %1$d</string>
+    <string name="stats_time">Total time: %1$s</string>
+    <string name="stats_throughput_first_pass">Effective throughput (first pass): %1$s</string>
+    <string name="stats_throughput">Effective throughput: %1$s</string>
+    <string name="stats_overhead_sender">Overhead per pass (parity + repeated META): %1$s</string>
+    <string name="stats_overhead_receiver">Overhead (frames beyond the data chunks): %1$s</string>
+    <string name="stats_rx_frames">Frames needed: %1$d (file has %2$d data chunks)</string>
+    <string name="stats_duplicates">Duplicates ignored: %1$d</string>
+    <string name="stats_recovered">Recovered by parity: %1$d</string>
+    <string name="stats_rejected">Rejected frames: %1$d</string>
+    <string name="stats_integrity_ok">Integrity: SHA-256 verified</string>
+    <string name="stats_integrity_bad">Integrity: SHA-256 does NOT match</string>
+
+    <!-- History and details -->
+    <string name="filter_all">All</string>
+    <string name="filter_sent">Sent</string>
+    <string name="filter_received">Received</string>
+    <string name="history_empty_title">No transfers yet</string>
+    <string name="history_empty_hint">Finished transfers appear here.</string>
+    <string name="history_row_details">%1$s  -  %2$s</string>
+    <string name="history_delete_title">Delete transfer?</string>
+    <string name="history_delete_message">\"%1$s\" and its saved file will be removed from this phone.</string>
+    <string name="direction_sent">Sent</string>
+    <string name="direction_received">Received</string>
+    <string name="status_completed">COMPLETED</string>
+    <string name="status_failed">FAILED</string>
+    <string name="status_interrupted">INTERRUPTED</string>
+    <string name="cd_synced">Uploaded to your account</string>
+    <string name="details_direction">Direction</string>
+    <string name="details_status">Status</string>
+    <string name="details_size">File size</string>
+    <string name="details_size_value">%1$s (%2$d bytes)</string>
+    <string name="details_chunks">Data chunks</string>
+    <string name="details_recovered">Chunks recovered by parity</string>
+    <string name="details_hash">SHA-256</string>
+    <string name="details_path">Stored at</string>
+    <string name="details_date">Date</string>
+    <string name="details_synced">Synced to cloud</string>
+    <string name="details_synced_yes">Yes</string>
+    <string name="details_synced_no">Not yet (needs an account and internet)</string>
+    <string name="details_no_copy">No copy is stored on this phone</string>
+    <string name="details_no_file">There is no stored file for this entry, so it cannot be opened, shared or verified. Sent files are never copied by the app, and failed transfers are not saved.</string>
+    <string name="details_not_found">This entry no longer exists.</string>
+    <string name="details_no_app">No app can open this file type. Try Share instead.</string>
+    <string name="details_verifying">Checking...</string>
+    <string name="details_verify_ok">The file matches its SHA-256 hash.</string>
+    <string name="details_verify_bad">The file has changed: its hash no longer matches.</string>
+    <string name="details_verify_error">The file could not be read.</string>
+
+    <!-- Benchmark -->
+    <string name="benchmark_description">Compares no parity with K = 8, 4 and 2 at 0, 5, 10 and 20 percent frame loss. %1$d seeded trials per cell, %2$d KB file, %3$d byte chunks. The same seeds give the same table every time.</string>
+    <string name="benchmark_copied">Table copied.</string>
+
+    <!-- Service and notifications -->
+    <string name="channel_progress_name">Transfer progress</string>
+    <string name="channel_progress_desc">Shows the progress of a running transfer.</string>
+    <string name="channel_alerts_name">Transfer alerts</string>
+    <string name="channel_alerts_desc">Low battery warnings and transfer results.</string>
+    <string name="notif_sending_title">Sending file</string>
+    <string name="notif_receiving_title">Receiving file</string>
+    <string name="notif_sending_text">Sending: frame %1$d/%2$d</string>
+    <string name="notif_receiving_text">Received %1$d/%2$d chunks</string>
+    <string name="notif_preparing">Preparing...</string>
+    <string name="notif_waiting">Waiting for the first QR code...</string>
+    <string name="notif_paused_suffix">(paused)</string>
+    <string name="notif_action_stop">Stop</string>
+    <string name="notif_action_resume">Resume</string>
+    <string name="notif_battery_title">Battery low: transfer paused</string>
+    <string name="notif_battery_text">The transfer was paused to save power. Plug in the phone or tap Resume.</string>
+    <string name="notif_done_received">File received</string>
+    <string name="notif_done_sent">Sending finished</string>
+    <string name="notif_failed_title">Transfer did not finish</string>
+    <string name="toast_transfer_completed">Transfer finished: %1$s</string>
+    <string name="toast_transfer_failed">Transfer failed: %1$s</string>
+    <string name="unknown_file">Unknown file</string>
+    <string name="msg_stopped_early">Stopped before the file was complete.</string>
+    <string name="error_hash_mismatch">All chunks arrived but the SHA-256 check failed. The file was not saved.</string>
+    <string name="error_storage">The received file could not be saved on this phone.</string>
+    <string name="error_unknown">Something went wrong.</string>
+</resources>
